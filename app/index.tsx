@@ -1,4 +1,5 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Link } from "expo-router";
+import { Text, View } from "react-native";
 import "./index.css";
 
 export default function Index() {
@@ -8,12 +9,12 @@ export default function Index() {
         Welcome to <Text className="text-green-300 font-bold">WeeklyMeals!</Text>
       </Text>
       <View className="flex flex-row justify-between w-48">
-        <TouchableOpacity className="mt-4 px-4 py-2 bg-white rounded">
+        <Link href="/(auth)/login" className="mt-4 px-4 py-2 bg-white rounded">
           <Text className="text-green-800 font-medium">Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity className="mt-4 px-4 py-2 bg-white rounded">
+        </Link>
+        <Link href="/(auth)/register" className="mt-4 px-4 py-2 bg-white rounded">
           <Text className="text-green-800 font-medium">Register</Text>
-        </TouchableOpacity>
+        </Link>
       </View>
     </View>
   );
