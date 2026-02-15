@@ -8,7 +8,9 @@ node_modules/
 dist/
 web-build/
 expo-env.d.ts
-
+babel.config.js
+metro.config.js
+nativewind-env.d.ts
 # Native
 .kotlin/
 *.orig.*
