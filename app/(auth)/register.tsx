@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { supabase } from "../../lib/supabase";
 
 const registerSchema = yup.object().shape({
+  name: yup.string().required("Name is required"),
   email: yup.string().email("Enter a valid email address").required("Email is required"),
   password: yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
   confirmPassword: yup
@@ -28,6 +29,7 @@ function Register() {
   } = useForm({
     resolver: yupResolver(registerSchema),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -66,6 +68,23 @@ function Register() {
       <View className="w-4/5 bg-white p-6 rounded-2xl shadow">
         <Text className="text-2xl font-semibold items-center flex flex-col text-center mb-3">Register</Text>
 
+        <Text>Name:</Text>
+        <Controller
+          control={control}
+          name="name"
+          render={({ field }) => (
+            <TextInput
+              autoCapitalize="words"
+              placeholder="Enter name"
+              onChangeText={field.onChange}
+              onBlur={field.onBlur}
+              value={field.value}
+              className="border border-gray-300 p-2 my-2 rounded-lg placeholder:text-gray-400"
+            />
+          )}
+        />
+        {errors.name ? <Text className="text-red-600">{errors.name.message}</Text> : null}
+
         <Text>Email:</Text>
         <Controller
           control={control}
@@ -73,7 +92,6 @@ function Register() {
           render={({ field }) => (
             <TextInput
               autoCapitalize="none"
-              keyboardType="email-address"
               placeholder="Enter email"
               onChangeText={field.onChange}
               onBlur={field.onBlur}
