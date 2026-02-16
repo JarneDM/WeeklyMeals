@@ -45,7 +45,7 @@ export default function RootLayout() {
       return;
     }
 
-    if (session && inAuthGroup) {
+    if (session && (inAuthGroup || segments.length === 0)) {
       router.replace("/(tabs)/home");
     }
   }, [isLoading, router, segments, session]);
