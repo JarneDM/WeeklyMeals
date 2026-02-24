@@ -25,6 +25,7 @@ function Home() {
           </View>
         </View>
         {/* here comes the card components maybe or some quick actions | or both */}
+        {/* after that also mayb some instructions ons how the app works (only 3-4 bullet points or sum) */}
       </SafeAreaView>
     </LinearGradient>
   );
