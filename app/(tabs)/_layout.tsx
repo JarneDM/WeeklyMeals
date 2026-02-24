@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import Feather from "@expo/vector-icons/Feather";
 import { Tabs } from "expo-router";
 
 export default function RootLayout() {
@@ -6,10 +7,10 @@ export default function RootLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#FFFFFF",
-        tabBarInactiveTintColor: "#E5E7EB",
+        tabBarActiveTintColor: "#e35706",
+        tabBarInactiveTintColor: "#808080",
         tabBarStyle: {
-          backgroundColor: "#228B22",
+          backgroundColor: "#FFFFFF",
           borderTopColor: "#E5E7EB",
           height: 62,
           paddingBottom: 10,
@@ -21,7 +22,7 @@ export default function RootLayout() {
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
+          tabBarIcon: ({ color, size }) => <Feather name="home" size={size} color={color} />,
         }}
       />
       <Tabs.Screen

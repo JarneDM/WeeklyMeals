@@ -4,7 +4,7 @@ import "./index.css";
 
 export default function Index() {
   return (
-    <View className="bg-green-600 h-full flex items-center justify-center">
+    <View className="bg-orange-400/70 h-full flex items-center justify-center">
       <Text className="text-white text-2xl font-medium">
         Welcome to <Text className="text-green-300 font-bold">WeeklyMeals!</Text>
       </Text>
